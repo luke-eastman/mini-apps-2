@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HistoricalEventFinder from 'HistoricalEventFinder.jsx';
+import HistoricalEventsFinder from 'HistoricalEventsFinder.jsx';
 
-ReactDOM.render(<HistoricalEventFinder />, document.getElementById('historical-events-finder'));
+ReactDOM.render(<HistoricalEventsFinder />, document.getElementById('historical-events-finder'));
