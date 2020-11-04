@@ -23,7 +23,7 @@ const HistoricalEventsFinder = () => {
   const getResults = () => {
     axios({
       method: 'get',
-      url: `http://localhost:3000/events?_page=${page}&_sort=date&_order=desc&q=${searchTerm}`
+      url: `http://localhost:3000/events?_page=${page}&_sort=date&_order=asc&q=${searchTerm}`
     })
     .then(result => {
       var data = cleanResults(result.data);
@@ -38,8 +38,16 @@ const HistoricalEventsFinder = () => {
         if (Number(results[i].date) < 0) {
           results[i].date = `${Number(results[i].date) * -1} BC`
         } else {
-          results[i].date = `${results[i].date} BC`
+          results[i].date = `${results[i].date} AD`
         }
+      } else {
+        var date = results[i].date.split('/');
+        if (Number(date[0]) < 0) {
+          results[i].date = `${date[1]}/${date[2]}/${Number(date[0]) * - 1} BC`
+        } else {
+          results[i].date = `${date[1]}/${date[2]}/${Number(date[0])} AD`
+        }
+
       }
     }
     return results;
@@ -52,7 +60,7 @@ const HistoricalEventsFinder = () => {
   return (
     <div>
       <Search setSearchTerm={setSearchTerm} />
-      <Results results={results} page={page} setPagepages={pages} handlePageChange={handlePageChange} />
+      <Results results={results} page={page} pages={pages} handlePageChange={handlePageChange} />
     </div>
   );
 }
