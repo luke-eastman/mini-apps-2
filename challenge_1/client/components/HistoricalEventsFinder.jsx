@@ -23,17 +23,30 @@ const HistoricalEventsFinder = () => {
   const getResults = () => {
     axios({
       method: 'get',
-      url: `http://localhost:3000/events?_page=${page}&q=${searchTerm}`
+      url: `http://localhost:3000/events?_page=${page}&_sort=date&_order=desc&q=${searchTerm}`
     })
     .then(result => {
-      setPages(Math.ceil(result.headers['x-total-count'] / 10))
-      setResults(result.data)
+      var data = cleanResults(result.data);
+      setPages(Math.ceil(result.headers['x-total-count'] / 10));
+      setResults(data);
     })
+  }
+
+  const cleanResults = (results) => {
+    for (var i = 0; i < results.length; i++) {
+      if (!results[i].date.includes('/')) {
+        if (Number(results[i].date) < 0) {
+          results[i].date = `${Number(results[i].date) * -1} BC`
+        } else {
+          results[i].date = `${results[i].date} BC`
+        }
+      }
+    }
+    return results;
   }
 
   const handlePageChange = (event) => {
     setPage(event.selected + 1);
-    console.log('page changed to', event.selected + 1)
   }
 
   return (
