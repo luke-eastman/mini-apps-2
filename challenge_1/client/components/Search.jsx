@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Search = () => {
+const Search = ({setSearchTerm}) => {
   return (
-    <div>Search</div>
+    <input type="text" placeholder="Search..." onChange={(event => setSearchTerm(event.target.value))} />
   );
 }
 
