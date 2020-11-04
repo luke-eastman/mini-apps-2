@@ -13,13 +13,16 @@ const Results = ({results, page, pages, handlePageChange}) => {
           previousLabel={"prev"}
           nextLabel={"next"}
           breakLabel={"..."}
-          breakClassName={"break-me"}
           pageCount={pages}
           marginPagesDisplayed={2}
-          pageRangeDisplayed={5}
+          pageRangeDisplayed={3}
           containerClassName={"pagination"}
           subContainerClassName={"pages pagination"}
+          pageClassName={"page"}
           activeClassName={"active"}
+          previousClassName={"prev page"}
+          nextClassName={"next page"}
+          breakClassName={"break page"}
           forcePage={0}
         />
       </div>
@@ -33,13 +36,16 @@ const Results = ({results, page, pages, handlePageChange}) => {
         previousLabel={"prev"}
         nextLabel={"next"}
         breakLabel={"..."}
-        breakClassName={"break-me"}
         pageCount={pages}
         marginPagesDisplayed={2}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={3}
         containerClassName={"pagination"}
         subContainerClassName={"pages pagination"}
+        pageClassName={"page"}
         activeClassName={"active"}
+        previousClassName={"prev page"}
+        nextClassName={"next page"}
+        breakClassName={"break page"}
       />
     </div>
   );
