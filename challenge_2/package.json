@@ -19,6 +19,14 @@
   },
   "homepage": "https://github.com/luke-eastman/hrr48-mini-apps-2#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "babel-loader": "^8.1.0",
+    "express": "^4.17.1",
+    "webpack": "^4.44.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.2.0"
   }
 }
