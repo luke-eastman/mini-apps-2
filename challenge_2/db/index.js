@@ -7,7 +7,7 @@ client.on("error", function(error) {
 
 const addDaily = (symbol, day) => {
   return new Promise((resolve, reject) => {
-    client.set(symbol, day, (err, res) = {
+    client.sadd(symbol, day, (err, res) => {
       if (err) {
         reject(err);
       } else {
@@ -17,9 +17,9 @@ const addDaily = (symbol, day) => {
   });
 }
 
-const getForSymbol => (symbol) => {
+const getForSymbol = (symbol) => {
   return new Promise((resolve, reject) => {
-    client.get(symbol, (err, res) => {
+    client.smembers(symbol, (err, res) => {
       if (err) {
         reject(err);
       } else {

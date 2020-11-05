@@ -15,4 +15,6 @@ const getClosingPrices = () => {
   });
 }
 
+
+
 module.exports.getClosingPrices = getClosingPrices;
