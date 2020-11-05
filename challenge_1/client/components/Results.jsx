@@ -37,7 +37,7 @@ const Results = ({results, page, pages, handlePageChange}) => {
         nextLabel={"next"}
         breakLabel={"..."}
         pageCount={pages}
-        marginPagesDisplayed={2}
+        marginPagesDisplayed={1}
         pageRangeDisplayed={3}
         containerClassName={"pagination"}
         subContainerClassName={"pages pagination"}

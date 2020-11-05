@@ -15,3 +15,8 @@
 .active {
   background-color: cyan;
 }
+
+.disabled {
+  color: grey;
+  border-color: black;
+}
