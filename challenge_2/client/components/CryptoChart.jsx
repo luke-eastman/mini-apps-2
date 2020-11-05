@@ -12,6 +12,7 @@ const CryptoChart = ({prices}) => {
           labels: Object.keys(prices),
           datasets: [
             {
+              label: '(BTC)',
               data: Object.values(prices),
               lineTension: 0,
             }
