@@ -9,16 +9,22 @@ const CryptoChart = ({prices}) => {
     new Chart(cryptoChartRef, {
       type: "line",
       data: {
-          //Bring in data
           labels: Object.keys(prices),
           datasets: [
-              {
-                  data: Object.values(prices),
-              }
+            {
+              data: Object.values(prices),
+              lineTension: 0,
+            }
           ]
       },
       options: {
-          //Customize chart options
+
+        scales: {
+          xAxes: [{
+              type: 'time',
+              distribution: 'series'
+          }]
+        }
       }
     });
   }, [chartRef, prices]);
@@ -26,7 +32,11 @@ const CryptoChart = ({prices}) => {
 
 
   return (
-    <canvas id="crypto-chart" ref={chartRef} />
+    <div>
+      <canvas id="crypto-chart" ref={chartRef} />
+      <a href="https://www.coindesk.com/price/bitcoin">Powered By CoinDesk</a>
+    </div>
+
   );
 };
 
