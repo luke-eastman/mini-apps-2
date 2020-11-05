@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-
+import CryptoChart from './CryptoChart.jsx';
 const Crypto = () => {
   const [prices, setPrices] = useState([]);
 
@@ -17,9 +17,10 @@ const Crypto = () => {
     });
   }, []);
 
-
   return (
-    <h1>More Crypto</h1>
+    <div>
+      <CryptoChart prices={prices}/>
+    </div>
   );
 }
 

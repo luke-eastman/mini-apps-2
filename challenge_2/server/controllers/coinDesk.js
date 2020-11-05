@@ -7,11 +7,11 @@ const getClosingPrices = () => {
       url: 'https://api.coindesk.com/v1/bpi/historical/close.json'
     })
     .then(res => {
-      var pricesByDate = [];
-      for (var key in res.data.bpi) {
-        pricesByDate.push({date: key, price: res.data.bpi[key]});
-      }
-      resolve(pricesByDate);
+      // var pricesByDate = [];
+      // for (var key in res.data.bpi) {
+      //   pricesByDate.push({date: key, price: res.data.bpi[key]});
+      // }
+      resolve(res.data.bpi);
     })
     .catch(err => {
       reject(err);
