@@ -5,7 +5,7 @@ const port = 3000;
 
 const dataController = require('./controllers/coinDesk.js')
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.get('/api/closing', (req, res) => {
   dataController.getClosingPrices()
