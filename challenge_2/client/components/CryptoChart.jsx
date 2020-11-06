@@ -36,7 +36,6 @@ const CryptoChart = ({prices}) => {
   return (
     <div>
       <canvas id="crypto-chart" ref={chartRef} />
-      <a href="https://www.coindesk.com/price/bitcoin">Powered By CoinDesk</a>
     </div>
 
   );
