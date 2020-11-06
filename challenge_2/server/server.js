@@ -22,10 +22,10 @@ app.get('/api/closing', (req, res) => {
 app.get('/api/closing/:symbol', (req, res) => {
   cryptoCompare.getClosingPricesBySymbol(req.params.symbol)
   .then(result => {
-    console.log(result);
+    res.send(result);
   })
   .catch(err => {
-    console.error(err);
+    res.status(500).send(err);
   });
 });
 

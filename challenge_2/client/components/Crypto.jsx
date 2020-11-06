@@ -7,7 +7,7 @@ const Crypto = () => {
   useEffect(() => {
     axios({
       method: 'get',
-      url: '/api/closing'
+      url: '/api/closing/BTC'
     })
     .then(res => {
       setPrices(res.data);

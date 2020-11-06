@@ -9,11 +9,11 @@ const CryptoChart = ({prices}) => {
     new Chart(cryptoChartRef, {
       type: "line",
       data: {
-          labels: Object.keys(prices),
+          labels: prices.dates,
           datasets: [
             {
               label: '(BTC)',
-              data: Object.values(prices),
+              data: prices.prices,
               lineTension: 0,
             }
           ]
