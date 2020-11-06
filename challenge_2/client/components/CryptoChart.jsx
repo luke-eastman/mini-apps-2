@@ -15,6 +15,7 @@ const CryptoChart = ({prices}) => {
               label: '(BTC)',
               data: prices.prices,
               lineTension: 0,
+              radius: 0
             }
           ]
       },
